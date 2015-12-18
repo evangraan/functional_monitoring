@@ -8,4 +8,3 @@ Feature: Monitor a service's functional status
 	I want to monitor the functional status
 
 	Scenario:
-	
