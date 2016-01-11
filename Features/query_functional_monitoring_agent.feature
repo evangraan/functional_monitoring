@@ -7,3 +7,4 @@ Feature: Query a functional monitoring agent
 	I want to receive a response indicating the functional status
 
 	Scenario:
+
