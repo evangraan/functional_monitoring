@@ -57,4 +57,3 @@ Feature: Consume a service
 		When I request functional status
 		Then I receive "no response" notification
 
-	Scenario: Invalid response
