@@ -39,3 +39,11 @@ Feature: Query service and its dependencies
 		And dependencies
 		When I have selected an appropriate strategy
 		Then I send "no rule set" error notification		
+
+	Scenario: Unexpected outcome
+		Given notifications
+		And errors
+		When I have queried the service and its dependencies
+		Given unexpected outcomes
+		When I apply the rule set to unexpected outcomes
+		Then I arrive at a functional status

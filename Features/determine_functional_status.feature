@@ -8,4 +8,4 @@ Feature: Determine functional status
 	In order to accurately convey my functional status in my role as a service
 	I want to make use of the functional monitoring framework
 
-	Scenario:
+	Scenario: 

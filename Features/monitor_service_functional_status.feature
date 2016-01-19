@@ -12,35 +12,21 @@ Feature: Monitor a service's functional status
 		And rule sets
 		And monitoring strategies
 		When I have been asked to monitor a service's functional status
-		Then I send "no mappings between service purposes" notification
+		Then I send "no mappings between service purposes" notification to the provisioner
 
 	Scenario: No rule sets
 		Given no rule sets
 		And mappings between service purposes
 		And monitoring strategies
 		When I have been asked to monitor a service's functional status
-		Then I send "no rule sets" notification
+		Then I send "no rule sets" notification to the provisioner
 
 	Scenario: Unable to retrieve monitoring strategy from service registry
 		Given no monitoring strategies
 		And mappings between service purposes
 		And rule sets
 		When I have been asked to monitor a service's functional status
-		Then I send "unable to retrieve monitoring strategy from service registry" notification
-
-#	Scenario: Unable to retrieve monitoring strategy from configuration UI
-#		Given no monitoring strategies
-#		And mappings between service purposes
-#		And rule sets
-#		When I have been tasked to monitor a service's functional status
-#		Then I send "unable to retrieve monitoring strategies from configuration ui" notification
-
-#	Scenario: Unable to use monitoring strategy from functional monitoring framework
-#		Given no monitoring strategies
-#		And mappings between service purposes
-#		And rule sets
-#		When I have been tasked to monitor a service's functional status
-#		Then I send "unable to use monitoring strategy from functional monitoring framework" notification
+		Then I send "unable to retrieve monitoring strategy from service registry" notification to the provisioner
 
 	Scenario: Valid mappings, rule sets and monitoring strategy
 		Given mappings between service purposes 
@@ -48,4 +34,19 @@ Feature: Monitor a service's functional status
 		When I have been asked to monitor a service's functional status
 		Given I have successfully retrieved strategy from the service registry
 		And I have used strategy to arrive at functional status
-		Then I send the functional status
+		Then I send functional status to the provisioner
+
+#	Scenario: Monitoring a service's functional status
+#		Given purpose
+#		And rule set
+#		And strategy
+#		When monitoring a service's functional status
+#		Then I arrive at a functional status
+
+	Scenario: Monitoring a service's functional status
+		Given functional monitoring framework
+		And purpose
+		And rule set
+		And strategy
+		When monitoring a service's functional status
+		Then I arrive at functional status

@@ -29,3 +29,11 @@ Feature: Check whether rule set's criteria was met
 		And threshold
 		When I have queried a service and its dependencies
 		Then I arrive at a functional status
+
+	Scenario: Arrived at functional status
+		Given functional status
+		And service
+		And purpose
+		And provisioner
+		When I have arrived at functional status
+		Then I send a notification to the provisioner

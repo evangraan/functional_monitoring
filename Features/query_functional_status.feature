@@ -19,3 +19,9 @@ Feature: Query a service's functional status
 		And functional status
 		When a functional monitoring agent queries my functional status 
 		Then I send a "service unavailable" notification
+
+	Scenario: Detailed response sent
+		Given measurements
+		And Thresholds
+		When a functional monitoring agent requests the details of my functional status
+		Then I send a detailed result to the functional monitoring agent

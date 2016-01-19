@@ -12,3 +12,4 @@ Feature: Push status information to functional monitoring agent
 		And notifications
 		When I push status information to the functional monitoring agent
 		Then I send status information to the functional monitoring agent
+
