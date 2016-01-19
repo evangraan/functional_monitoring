@@ -1,7 +1,7 @@
 Feature: Check whether rule set's criteria was met
 	As a functional monitoring agent
 	Given measurement
-	And threshold
+	And threshold#call this rule, #when i have rule and measurement I need to interprret rule using measurements
 	When I have queried a service and its dependencies
 	In order to arrive at a functional status
 	I want to check whether the rule set's criteria was met

@@ -22,7 +22,9 @@ Feature: Monitor a service's functional status
 		Then I send "no rule sets" notification to the provisioner
 
 	Scenario: Unable to retrieve monitoring strategy from service registry
-		Given no monitoring strategies
+		Given a service identifier
+		And an indication of using the service registry for strategy
+		And a failure retrieving service strategy from the service registry
 		And mappings between service purposes
 		And rule sets
 		When I have been asked to monitor a service's functional status
@@ -30,11 +32,17 @@ Feature: Monitor a service's functional status
 
 	Scenario: Valid mappings, rule sets and monitoring strategy
 		Given mappings between service purposes 
+		And an indication of using the service registry for strategy
+		And service identifier
 		And rule sets 
-		When I have been asked to monitor a service's functional status
-		Given I have successfully retrieved strategy from the service registry
+		And I have successfully retrieved strategy from the service registry
 		And I have used strategy to arrive at functional status
+		When I have been asked to monitor a service's functional status
 		Then I send functional status to the provisioner
+
+	Scenario:
+
+
 
 #	Scenario: Monitoring a service's functional status
 #		Given purpose
@@ -48,5 +56,8 @@ Feature: Monitor a service's functional status
 		And purpose
 		And rule set
 		And strategy
-		When monitoring a service's functional status
-		Then I arrive at functional status
+		When I have been asked to monnitor a service's functional status
+		Then I use the framework to arrive at functional status
+
+	Scenario: #ask framework what strategies, #deciding whether or not to use the frame wwork for strategies()
+		Given 
