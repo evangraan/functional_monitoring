@@ -1,32 +1,32 @@
 Feature: Check whether rule set's criteria was met
 	As a functional monitoring agent
 	Given measurement
-	And threshold#call this rule, #when i have rule and measurement I need to interprret rule using measurements
+	And rule 
 	When I have queried a service and its dependencies
 	In order to arrive at a functional status
 	I want to check whether the rule set's criteria was met
 
-	Scenario: No threshold
-		Given no threshold
+	Scenario: No rule
+		Given no rule
 		And measurement
 		When I have queried a service and its dependencies
-		Then I send "no threshold" error notification
+		Then I send "no rule" error notification
 
 	Scenario: No Measurement
 		Given no measurement
-		And threshold
+		And rule
 		When I have queried a service and its dependencies
 		Then I send "no measurement" error notification
 
-	Scenario: No threshold and no measurement
-		Given no threshold
+	Scenario: No rule and no measurement
+		Given no rule
 		And no measurement
 		When I have queried a service and its dependencies
-		Then I send "no measurement and no threshold" error notification
+		Then I send "no measurement and no rule" error notification
 
-	Scenario: Measurement and threshold evaluated
+	Scenario: Measurement and rule evaluated
 		Given measurement
-		And threshold
+		And rule
 		When I have queried a service and its dependencies
 		Then I arrive at a functional status
 
@@ -37,3 +37,10 @@ Feature: Check whether rule set's criteria was met
 		And provisioner
 		When I have arrived at functional status
 		Then I send a notification to the provisioner
+#when i have rule and measurement I need to interprret rule using measurements
+	Scenario: Rule evaluated with measurement
+		Given rule
+		And measurement
+		And I have used measurement to interpret rule
+		When I have queried a service and its dependencies
+		Then I arrive at a functional status 

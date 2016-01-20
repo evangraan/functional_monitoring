@@ -30,7 +30,7 @@ Feature: Monitor a service's functional status
 		When I have been asked to monitor a service's functional status
 		Then I send "unable to retrieve monitoring strategy from service registry" notification to the provisioner
 
-	Scenario: Valid mappings, rule sets and monitoring strategy
+	Scenario: Valid mappings, rule sets and monitoring strategy taken from service registry
 		Given mappings between service purposes 
 		And an indication of using the service registry for strategy
 		And service identifier
@@ -40,17 +40,6 @@ Feature: Monitor a service's functional status
 		When I have been asked to monitor a service's functional status
 		Then I send functional status to the provisioner
 
-	Scenario:
-
-
-
-#	Scenario: Monitoring a service's functional status
-#		Given purpose
-#		And rule set
-#		And strategy
-#		When monitoring a service's functional status
-#		Then I arrive at a functional status
-
 	Scenario: Monitoring a service's functional status
 		Given functional monitoring framework
 		And purpose
@@ -59,5 +48,41 @@ Feature: Monitor a service's functional status
 		When I have been asked to monnitor a service's functional status
 		Then I use the framework to arrive at functional status
 
-	Scenario: #ask framework what strategies, #deciding whether or not to use the frame wwork for strategies()
-		Given 
+	#ask framework what strategies, 
+	Scenario: Functional monitoring framework chosen for strategy
+		Given fumctional monitoring framework
+		And an indication of using the functional monitoring framework for strategy
+		And purpose
+		And rule set
+		When I have been asked to monnitor a service's functional status
+		Then I query the functional monitoring framework for the strategies	
+
+	#deciding whether or not to use the frame wwork for strategies
+	Scenario: Functional monitoring framework not used for strategy
+		Given functional monitoring framework
+		And no indication of using the functional monitoring framework for strategy
+		And purpose
+		And rule set
+		When I have been asked to monitor a service's functional status
+		Then I do not use the functional monitoring framework to rertrieve strategy#||Then I use the service registry for strategy
+
+	Scenario: Valid mappings, rule sets and monitoring strategy taken from functional monitoring framework
+		Given functional monitoring framework
+		And an indication of using the functional monitoring framework for strategy		
+		And mappings between service purposes
+		And rule set
+		And service identifier
+		And I have successfully retrieved strategy from functional monitoring framework
+		And I have used strategy to arrive at functional status
+		When I have been asked to monitor a service's functional status
+		Then I send functional status to the provisioner
+
+	Scenario: Unable to retrieve monitoring strategy from functional monitoring framework
+		Given functional monitoring framework
+		And an indication of using the functional monitoring framework for strategy
+		And a service identifier
+		And a failure retrieving service strategy from functional monitoring framework
+		And mappings between service purposes
+		And rule set
+		When I have been asked to monitor a service's functional status
+		Then I send "unable to retrieve monitoring strategy from functional monitoring framework" notification to the provisioner
