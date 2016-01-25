@@ -55,16 +55,7 @@ Feature: Monitor a service's functional status
 		And purpose
 		And rule set
 		When I have been asked to monnitor a service's functional status
-		Then I query the functional monitoring framework for the strategies	
-
-	#deciding whether or not to use the frame wwork for strategies
-	Scenario: Functional monitoring framework not used for strategy
-		Given functional monitoring framework
-		And no indication of using the functional monitoring framework for strategy
-		And purpose
-		And rule set
-		When I have been asked to monitor a service's functional status
-		Then I do not use the functional monitoring framework to rertrieve strategy#||Then I use the service registry for strategy
+		Then I query the functional monitoring framework for the strategies		
 
 	Scenario: Valid mappings, rule sets and monitoring strategy taken from functional monitoring framework
 		Given functional monitoring framework

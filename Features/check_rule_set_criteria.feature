@@ -37,10 +37,10 @@ Feature: Check whether rule set's criteria was met
 		And provisioner
 		When I have arrived at functional status
 		Then I send a notification to the provisioner
-#when i have rule and measurement I need to interprret rule using measurements
+
 	Scenario: Rule evaluated with measurement
 		Given rule
 		And measurement
 		And I have used measurement to interpret rule
-		When I have queried a service and its dependencies
-		Then I arrive at a functional status 
+		When I need to present a functional status
+		Then I apply the rule set to the functional status
