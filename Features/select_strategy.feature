@@ -1,25 +1,22 @@
 Feature: Select strategy from service
 	As a functional monitoring agent
-	Given service
-	And another service
-	And purpose
-	And rule set
-	When I need to choose which service to select the strategy from
-	Then I select the strategy from one of the services
+	Given preference for selecting strategy
+	When I need to choose where to select the strategy from
+	Then I select the strategy from the URI provided by the preference
 
-	Scenario: One service selected for strategy
-		Given service
-		And another service
-		And an indication of using the first service for strategy
-		And purpose
-		And rule set
-		When I have been asked to monitor 
-		Then I select strategy from that service
+	Scenario: No preference provided
+        Given no strategy preference
+		When I am bootstrapped
+		Then I notify 'no strategy preference'
 
-	Scenario: Unable to retrieve strategy from one service
-		Given service
-		And another service
-		And purpose
-		And rule set
-		When I have failed to retrieve strategy from one service
-		Then I select strategy from the other service
+	Scenario: Valid preference
+        Given a valid strategy preference
+		When I am bootstrapped
+		Then I remember the strategy preference
+
+	Scenario: Invalid preference provided
+        Given invalid strategy preference
+		When I am bootstrapped
+		Then I notify 'invalid strategy preference'
+
+

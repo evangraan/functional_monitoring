@@ -14,7 +14,7 @@ Feature: Query service and its dependencies
 		And dependencies
 		And rule set
 		When I have selected an appropriate strategy
-		Then I send functional status
+		Then I take measurements according to the strategy
 
 	Scenario: No strategy
 		Given no strategy
@@ -26,7 +26,7 @@ Feature: Query service and its dependencies
 
 	Scenario: No service
 		Given no service
-		And stragey
+		And strategy
 		And dependencies
 		And rule set
 		When I have selected an appropriate strategy
@@ -46,4 +46,4 @@ Feature: Query service and its dependencies
 		When I have queried the service and its dependencies
 		Given unexpected outcomes
 		When I apply the rule set to unexpected outcomes
-		Then I arrive at a functional status
+		Then I take measurements of the unexpected outcomes

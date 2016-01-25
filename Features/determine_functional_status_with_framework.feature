@@ -3,7 +3,7 @@ Feature: Use functional monitoring framework to determine functional status
 	Given functional monitoring framework
 	And purposes
 	And rule sets
-	And strategies
+	And strategy
 	When I need to present my functional status
 	In order to accurately convey my functional status in my role as a service
 	I want to make use of the functional monitoring framework
