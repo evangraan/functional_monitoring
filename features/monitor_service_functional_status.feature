@@ -27,7 +27,7 @@ Feature: Monitor a service's functional status
 		And purpose
 		And rule set
 		When I have been asked to monitor a service's functional status
-		Then I query the service registry for the strategies		
+		Then I query the service registry for the strategy		
 
 	Scenario: Unable to retrieve monitoring strategy from service registry
 		Given service identifier
@@ -63,7 +63,7 @@ Feature: Monitor a service's functional status
 		And purpose
 		And rule set
 		When I have been asked to monitor a service's functional status
-		Then I query the functional monitoring framework for the strategies		
+		Then I query the functional monitoring framework for the strategy
 
 	Scenario: Valid mappings, rule sets and monitoring strategy taken from functional monitoring framework
 		Given functional monitoring framework
