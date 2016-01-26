@@ -10,19 +10,19 @@ Feature: Check whether rule set's criteria was met
 		Given no rule
 		And measurement
 		When I have queried a service and its dependencies
-		Then I send "no rule" error notification
+		Then I send 'no rule' error notification
 
 	Scenario: No measurement
 		Given no measurement
 		And rule
 		When I have queried a service and its dependencies
-		Then I send "no measurement" error notification
+		Then I send 'no measurement' error notification
 
 	Scenario: No rule and no measurement
 		Given no rule
 		And no measurement
 		When I have queried a service and its dependencies
-		Then I send "no measurement and no rule" error notification
+		Then I send 'no measurement and no rule' error notification
 
 	Scenario: Measurement and rule evaluated
 		Given measurement

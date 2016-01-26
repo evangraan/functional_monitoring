@@ -18,11 +18,11 @@ Feature: Send detailed response
 		Given no rule
 		And measurement
 		When a functional monitoring agent requests the details of my functional status
-		Then I send "no rule specified" notification to the functional monitoring agent
+		Then I send 'no rule specified' notification to the functional monitoring agent
 
 	Scenario: No measurement
 		Given no measurement
 		And rule
 		When a functional monitoring agent requests the details of my functional status
-		Then I send "no measurement provided" notification to the functional monitoring agent
+		Then I send 'no measurement provided' notification to the functional monitoring agent
 		

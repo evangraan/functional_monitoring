@@ -12,14 +12,14 @@ Feature: Monitor a service's functional status
 		And rule sets
 		And strategy
 		When I have been asked to monitor a service's functional status
-		Then I send "no mappings between service purposes" notification to the provisioner
+		Then I send 'no mappings between service purposes' notification to the provisioner
 
 	Scenario: No rule sets
 		Given no rule sets
 		And mappings between service purposes
 		And strategy
 		When I have been asked to monitor a service's functional status
-		Then I send "no rule sets" notification to the provisioner
+		Then I send 'no rule sets' notification to the provisioner
 
 	Scenario: Service registry chosen for strategy
 		Given functional monitoring framework
@@ -36,7 +36,7 @@ Feature: Monitor a service's functional status
 		And mappings between service purposes
 		And rule sets
 		When I have been asked to monitor a service's functional status
-		Then I send "unable to retrieve monitoring strategy from service registry" notification to the provisioner
+		Then I send 'unable to retrieve monitoring strategy from service registry' notification to the provisioner
 
 	Scenario: Valid mappings, rule sets and monitoring strategy taken from service registry
 		Given mappings between service purposes 
@@ -84,5 +84,5 @@ Feature: Monitor a service's functional status
 		And mappings between service purposes
 		And rule set
 		When I have been asked to monitor a service's functional status
-		Then I send "unable to retrieve monitoring strategy from functional monitoring framework" notification to the provisioner
+		Then I send 'unable to retrieve monitoring strategy from functional monitoring framework' notification to the provisioner
 		

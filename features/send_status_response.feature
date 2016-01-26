@@ -17,11 +17,11 @@ Feature: Send status response
 		And functional monitoring agent
 		And functional status
 		When the functional monitoring agent queries my functional status 
-		Then I send a "service unavailable" notification
+		Then I send a 'service unavailable' notification
 
 	Scenario: Functional status not determined
-		Given functional status can not be determined
+		Given functional status cannot be determined
 		And functional monitoring agent
 		When the functional monitoring agent queries my functional status
-		Then I send "functional status could not be determined" notification
+		Then I send 'functional status could not be determined' notification
 		

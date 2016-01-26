@@ -1,31 +1,31 @@
 Given(/^functional monitoring agent$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	@test.given_functional_monitoring_agent
 end
 
 Given(/^functional status$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	@test.given_functional_status
 end
 
 When(/^the functional monitoring agent queries my functional status$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	@test.query_functional_status
 end
 
 Then(/^I send a response indicating the functional status to the functional monitoring agent$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	expect(@test.has_sent_response_indicating_functional_status?).to eq(true)
 end
 
 Given(/^no service$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+	@test.given_no_service
 end
 
-Then(/^I send a "([^"]*)" notification$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I send a 'service unavailable' notification$/) do
+	expect(@test.has_received_notification?('service unavailable')).to eq(true)
 end
 
-Given(/^functional status can not be determined$/) do
-  pending # Write code here that turns the phrase above into concrete actions
+Given(/^functional status cannot be determined$/) do
+	@test.given_functional_status_cannot_be_determined
 end
 
-Then(/^I send "([^"]*)" notification$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
+Then(/^I send 'functional status could not be determined' notification$/) do
+	expect(@test.has_received_notification?('functional status could not be determined')).to eq(true)
 end
