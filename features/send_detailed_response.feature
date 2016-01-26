@@ -25,3 +25,4 @@ Feature: Send detailed response
 		And rule
 		When a functional monitoring agent requests the details of my functional status
 		Then I send "no measurement provided" notification to the functional monitoring agent
+		

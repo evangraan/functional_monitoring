@@ -18,5 +18,3 @@ Feature: Select strategy from service
         Given invalid strategy preference
 		When I am bootstrapped
 		Then I notify 'invalid strategy preference'
-
-

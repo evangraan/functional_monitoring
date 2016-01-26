@@ -22,5 +22,6 @@ Feature: Send status response
 	Scenario: Functional status not determined
 		Given functional status can not be determined
 		And functional monitoring agent
-		When the functional monitoring agent queries my functional status 
+		When the functional monitoring agent queries my functional status
 		Then I send "functional status could not be determined" notification
+		

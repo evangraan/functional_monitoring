@@ -47,3 +47,4 @@ Feature: Query service and its dependencies
 		Given unexpected outcomes
 		When I apply the rule set to unexpected outcomes
 		Then I take measurements of the unexpected outcomes
+		

@@ -85,3 +85,4 @@ Feature: Monitor a service's functional status
 		And rule set
 		When I have been asked to monitor a service's functional status
 		Then I send "unable to retrieve monitoring strategy from functional monitoring framework" notification to the provisioner
+		

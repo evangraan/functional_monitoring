@@ -12,7 +12,7 @@ Feature: Check whether rule set's criteria was met
 		When I have queried a service and its dependencies
 		Then I send "no rule" error notification
 
-	Scenario: No Measurement
+	Scenario: No measurement
 		Given no measurement
 		And rule
 		When I have queried a service and its dependencies
@@ -44,3 +44,4 @@ Feature: Check whether rule set's criteria was met
 		And I have used measurement to interpret rule
 		When I need to present a functional status
 		Then I apply the rule set to the functional status
+		
