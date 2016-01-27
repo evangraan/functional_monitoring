@@ -19,7 +19,7 @@ Given(/^no service$/) do
 end
 
 Then(/^I send a 'service unavailable' notification$/) do
-	expect(@test.has_received_notification?('service unavailable')).to eq(true)
+	expect(@test.has_sent_notification?('service unavailable')).to eq(true)
 end
 
 Given(/^functional status cannot be determined$/) do
@@ -27,5 +27,5 @@ Given(/^functional status cannot be determined$/) do
 end
 
 Then(/^I send 'functional status could not be determined' notification$/) do
-	expect(@test.has_received_notification?('functional status could not be determined')).to eq(true)
+	expect(@test.has_sent_notification?('functional status could not be determined')).to eq(true)
 end

@@ -6,10 +6,6 @@ Given(/^rule sets$/) do
   @test.given_rule_sets
 end
 
-Given(/^strategy$/) do
-  @test.given_strategy
-end
-
 When(/^I have been asked to monitor a service's functional status$/) do
   @test.asked_to_monitor_service_functional_status
 end
@@ -30,20 +26,8 @@ Then(/^I send 'no rule sets' notification to the provisioner$/) do
   expect(@test.has_received_notification?('no rule sets')).to eq(true)
 end
 
-Given(/^functional monitoring framework$/) do
-  @test.given_functional_monitoring_framework
-end
-
 Given(/^indication of using the service registry for strategy$/) do
   @test.given_indication_of_using_service_registry_for_strategy
-end
-
-Given(/^purpose$/) do
-  @test.given_purpose
-end
-
-Given(/^rule set$/) do
-  @test.given_rule_set
 end
 
 Then(/^I query the service registry for the strategy$/) do

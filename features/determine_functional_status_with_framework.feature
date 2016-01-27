@@ -21,17 +21,17 @@ Feature: Use functional monitoring framework to determine functional status
 		And functional monitoring framework
 		And strategy
 		When I need to present my functional status
-		Then I send 'no purpose' error to the functional monitoring agent
+		Then I send 'no purpose' notification to the functional monitoring agent
 
 	Scenario: No strategy
 		Given no strategy
 		And functional monitoring framework
 		When I need to present my functional status
-		Then I send 'no strategy found' error to the functional monitoring agent
+		Then I send 'no strategy found' notification to the functional monitoring agent
 
 	Scenario: No rule set
 		Given no rule set
 		And functional monitoring framework
 		And strategy
 		When I need to present my functional status
-		Then I send 'no rule set' error to the functional monitoring agent
+		Then I send 'no rule set' notification to the functional monitoring agent

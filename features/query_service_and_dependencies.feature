@@ -22,7 +22,7 @@ Feature: Query service and its dependencies
 		And dependencies
 		And rule set
 		When I have selected an appropriate strategy
-		Then I send 'no strategy' error notification
+		Then I send 'no strategy' notification
 
 	Scenario: No service
 		Given no service
@@ -30,7 +30,7 @@ Feature: Query service and its dependencies
 		And dependencies
 		And rule set
 		When I have selected an appropriate strategy
-		Then I send 'no service' error notification		
+		Then I send 'no service' notification		
 
 	Scenario: No rule set
 		Given no rule set
@@ -38,7 +38,7 @@ Feature: Query service and its dependencies
 		And service
 		And dependencies
 		When I have selected an appropriate strategy
-		Then I send 'no rule set' error notification		
+		Then I send 'no rule set' notification		
 
 	Scenario: Unexpected outcome
 		Given notifications
